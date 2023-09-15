@@ -6,3 +6,4 @@ export const DrawComponent = () => {
     );
   };
   
+export default DrawComponent;
