@@ -1,5 +1,6 @@
 import React from "react";
 import { useKeyBoard } from "../hooks/useKeyBoard";
+import {ItemKeyComponent} from "./ItemKeyComponent";
 
 export const KeyBoardComponent = () => {
   const [keyState, setKeyState] = useKeyBoard();
@@ -15,7 +16,13 @@ export const KeyBoardComponent = () => {
   return (
     <div className="flex-container">
       {keyState.map(({ key, state }) => (
-        <div
+         <ItemKeyComponent
+         key={key}
+         myKey={key}
+         state={state}
+         handlerClick={handlerClick}
+       />
+        /*<div
           key={key}
           className={state ? "disablediv" : ""}
           onClick={() => {
@@ -23,7 +30,7 @@ export const KeyBoardComponent = () => {
           }}
         >
           {key}
-        </div>
+        </div>*/
       ))}
     </div>
   );
